@@ -1,28 +1,33 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto+Mono&display=swap');
+
 html,body{
-    background: #6665ee;
-    /* font-family: 'Book Antiqua', serif */
-}
+    background-image: url('./images/ban_img.jpg');
+;
+font-family: 'Roboto Mono', monospace;}
 ::selection{
     color: #fff;
-    background: #6665ee;
+    background: #02b111;
 }
 .container{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #db0d0d;
+    width: 75%;
+
+  margin: 0 auto;
 }
 .container .form{
     background: #fff;
     padding: 30px 35px;
     border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 41px 82px 0 rgba(1, 250, 76, 0.2), 0 6px 20px 0 rgba(0, 255, 42, 0.19);
 }
 .container .form form .form-control{
     height: 40px;
     font-size: 15px;
+    background: #fcfcfc;
+   
 }
 .container .form form .forget-pass{
     margin: -15px 0 15px 0;
@@ -31,20 +36,20 @@ html,body{
    font-size: 15px;
 }
 .container .form form .button{
-    background: #6665ee;
+    background: #02b111;
     color: #fff;
     font-size: 17px;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 .container .form form .button:hover{
-    background: #5757d1;
+    background:  #0b6e13;;
 }
 .container .form form .link{
     padding: 5px 0;
 }
 .container .form form .link a{
-    color: #6665ee;
+    color: #02b111;
 }
 .container .login-form form p{
     font-size: 14px;
@@ -52,3 +57,11 @@ html,body{
 .container .row .alert{
     font-size: 14px;
 }
+
+
+.table h5{color:#127d51; border-bottom:0; margin: 0;}
+.table h6{color:#127d51; border-bottom:0; margin: 0;}
+.table h5 span{ font-size:12px; font-weight:400; color:#666;}
+.table{margin-top:30px;}
+.table1{margin-top:0;}
+.table > tbody > tr > td{padding-bottom:25px;} 

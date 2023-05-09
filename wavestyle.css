@@ -1,17 +1,23 @@
-@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+  @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 body {
   margin:0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 h1 {
-  font-family: 'Times New Roman', serif;
-  font-weight:300;
+  font-family: 'Poppins', sans-serif;
+  /* font-weight:300; */
   letter-spacing: 2px;
   font-size:48px;
 }
 p {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
   font-size:14px;
   color: #333333;
@@ -20,7 +26,8 @@ p {
 .header {
   position:relative;
   text-align:center;
-  background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
+  /* background-image: url('./images/ban_img.jpg') ; */
+  opacity: 80;
   color:white;
 }
 .logo {
@@ -64,7 +71,7 @@ p {
 /* Animation */
 
 .parallax > use {
-  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)    ;
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
 }
 .parallax > use:nth-child(1) {
   animation-delay: -2s;
@@ -88,7 +95,7 @@ p {
   }
   100% { 
     transform: translate3d(85px,0,0);
-  } 
+  }
 }
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
@@ -100,6 +107,6 @@ p {
     height:30vh;
   }
   h1 {
-    font-size:30px;
+    font-size:24px;
   }
 }

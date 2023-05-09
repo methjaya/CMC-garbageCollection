@@ -1,4 +1,4 @@
-<?php require_once "controllerUserData.php"; ?>
+<?php require_once "controllerUserData2.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +13,7 @@
             <div class="col-md-4 offset-md-4 form">
                 <form action="signup-user.php" method="POST" autocomplete="">
                     <h2 class="text-center">Signup Form</h2>
-                    <p class="text-center">It's quick and easy.</p>
+                    <p class="text-center">Let's Make this a Better World.</p>
                     <?php
                     if(count($errors) == 1){
                         ?>

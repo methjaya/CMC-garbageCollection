@@ -18,7 +18,7 @@ if ($email != false && $password != false) {
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
@@ -230,6 +230,10 @@ if ($email != false && $password != false) {
                     </li>
                     <li>
                         <a href="logout-user.php"><i class="fa fa-fw fa fa-question-circle"></i> Logout</a>
+                    </li>
+                    <li>
+                        <a href="./collectionpoint.php"><i class="fa fa-map-marker" aria-hidden="true"></i>  Collection Points</a>
+                        
                     </li>
                 </ul>
             </div>

@@ -310,7 +310,7 @@ if ($email != false && $password != false) {
                                      values('$name', '$email', '$encedpass','$role')";
                                     $data_check = mysqli_query($con, $sql_ins);
                                     if ($data_check) {
-                                        echo "User Registered Succussfully!";
+                                        echo "<h2 style='color:green;'>User Registered Succussfully!<h2>";
                                     } else {
                                         $errors['db-error'] = "Failed to register";
                                     }

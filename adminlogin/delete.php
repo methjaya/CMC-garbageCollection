@@ -1,21 +1,17 @@
 <?php
-include('connection.php');
+include('../connection2.php');
 
    $id = $_GET['i'];
-    $query = "delete  from garbageinfo WHERE Id = '$id'" ;
+    $query = "DELETE  FROM waste_detection WHERE id = '$id'" ;
 
-    $data = mysqli_query($db,$query);
+    $data = mysqli_query($con,$query);
     
     if($data) {
 
-        echo "<span></span>";
-        ?>
-        
-        <META HTTP-EQUIV="Refresh" CONTENT="0; URL=http://localhost/EmailVerification/adminlogin/welcome.php">
-        <?php
+        header('Location: ./index.php');
     }
     else {
-        echo "<font color='red'>Failed to delete!";
+        echo "<font color='red'>Failed to delete the record!";
     }
 
 ?>

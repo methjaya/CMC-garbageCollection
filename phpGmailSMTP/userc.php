@@ -2,12 +2,7 @@
 require_once '../controllerUserData2.php';
 $email = $_SESSION['email'];
 $password = $_SESSION['password'];
-$userrole = $_SESSION['role'];
 if($email != false && $password != false){
-
-  if($userrole=="userc"){
-    header('Location: ../phpGmailSMTP/userc.php');
-  }
 
 }else{
     header('Location: ../login-user.php');
@@ -101,19 +96,17 @@ if($email != false && $password != false){
     <a class="navbar-brand" href="http://localhost/EmailVerification/index.html">Home</a>
     </nav>
     <br> -->
-    <div class="container"id="ch"> <b><mark> YOUR Request HISTORY </mark></b></div>
+    <div class="container"id="ch"> <b><mark> Available Requests </mark></b></div>
       <div class="container">     
       <table  cellspacing:="10" class='table' >
              <br><br>
              <tr>
-                 <th>Date</th>
                  <th>Waste Type</th>
                  <th>Location</th>
                  <th>Description</th>
                  <th>Image</th>
                  <th>Status</th>
                  <th>Priority</th>
-                 <th colspan="2" align="center">Operations</th>
                  <tr><br>
 
    <?php
@@ -124,7 +117,7 @@ if($email != false && $password != false){
 
    $user_email = $_SESSION['email']; 
    $hostForImage ="../images/";
-   $query = "SELECT * FROM waste_detection WHERE user_email = '$user_email' ";
+   $query = "SELECT * FROM waste_detection WHERE status = 'Approved' ";
    $data = mysqli_query($con,$query);
    $total = mysqli_num_rows($data);
      
@@ -135,15 +128,12 @@ if($email != false && $password != false){
 
      echo "
            <tr class='shadow p-3 mb-5 bg-white rounded'>
-               <td>   ".$result['date_time']." </td>
                <td>   ".$result['waste_type']." </td>
                <td>   <a href='".$result['location']."' target='_blank'><p style='color:green;font-weight: bold;'>Open Location</p></a> </td>
                <td>   ".$result['description']."  </td>
-               <td><a href = '".$hostForImage.$result['image']. "'><img src = '".$hostForImage.$result['image']. " 'height='200'width='200'/></a> </td>   
-               <td>   ".$result['status']." </td>   
-               <td>   ".$result['priority']." </td>           
-               <td><a href = 'delete.php?i=$result[id] ' class='btn btn-danger'data-toggle='modal' data-target='#exampleModalCenter' onclick='modalLauch(".$result['id'].")'>Delete</a></td>
-               <td> <a href = 'update.php?id=$result[id]&loc=$result[location]&des=$result[description]' class='btn btn-success'>Update</a></td>
+               <td><a href = '".$hostForImage.$result['image']. "'><img src = '".$hostForImage.$result['image']. " 'height='200'width='200'/></a> </td>     
+               <td>   ".$result['status']." </td>           
+               <td>   ".$result['priority']." </td>   
                </tr> ";
       
       }

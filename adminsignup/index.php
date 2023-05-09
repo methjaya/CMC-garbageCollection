@@ -1,21 +1,11 @@
 <?php 
-require_once 'controllerUserData.php';
+require_once './userInteractions.php';
 $email = $_SESSION['email'];
 $password = $_SESSION['password'];
+$user_role = $_SESSION['role'];
 if($email != false && $password != false){
-    $sql = "SELECT * FROM adminlogin_tbl WHERE email = '$email'";
-    $run_Sql = mysqli_query($con, $sql);
-    if($run_Sql){
-        $fetch_info = mysqli_fetch_assoc($run_Sql);
-        $status = $fetch_info['status'];
-        $code = $fetch_info['code'];
-        if($status == "verified"){
-            if($code != 0){
-                header('Location: reset-code.php');
-            }
-        }else{
-            header('Location: user-otp.php');
-        }
+    if($user_role=="admin"){
+        header('Location: adminindex.php');
     }
 }else{
     header('Location: adminlogin.php');
@@ -248,15 +238,13 @@ if($email != false && $password != false){
                       <table  cellspacing:="12" class='table'>
              <tr class="panel-heading">
                  <th> Id </th>
-                 <th> Images </th>
+                 <th> Submitted User Email</th>
+                 <th> Image </th>
                  <th> Date </th>
-                 <th> Name </th>
-                 <th> Mobile </th>
-                 <th> Email </th>
-                 <th> Waste Category </th>
-                 <th>Location</th>
-                 <th>Location Description</th>
-                 <th>Status</th>
+                 <th> Waste Type </th>
+                 <th> Location </th>
+                 <th> Description </th>
+                 <th> Status </th>
                  <th >Action</th>
                  <th>Update status</th>
              </tr>
@@ -264,11 +252,12 @@ if($email != false && $password != false){
    <?php
    // error_reporting(0);
   
-   include("connection.php");
-   $hostForImage ="http://localhost/EmailVerification/phpGmailSMTP/upload/";
-   $query = "select * from garbageinfo";
+   include("../connection2.php");
+   $hostForImage ="../images/";
+   $query = "SELECT * FROM waste_detection ORDER BY status DESC";
    $data = mysqli_query($con,$query);
    $total = mysqli_num_rows($data);
+
      
    if($total!=0) {
 
@@ -278,19 +267,17 @@ if($email != false && $password != false){
      echo "
            <tr class='panel panel'>
 
-               <td>   ".$result['Id']." </td>
-               <td><a href = '".$hostForImage.$result['file']. "'><img src = '".$hostForImage.$result['file']. " 'height='200'width='200'/></a> </td>               
-               <td>   ".$result['date']." </td>
-               <td>   ".$result['name']." </td>
-               <td>   ".$result['mobile']."  </td>
-               <td>   ".$result['email']." </td>
-               <td>   ".$result['wastetype']." </td>
-               <td>   ".$result['location']." </td>
-               <td>   ".$result['locationdescription']."  </td>
+               <td>   ".$result['id']." </td>
+               <td>   ".$result['user_email']." </td>
+               <td><a href = '".$hostForImage.$result['image']."'><img src = '".$hostForImage.$result['image']."'height='200'width='200'/></a> </td>               
+               <td>   ".$result['date_time']." </td>
+               <td>   ".$result['waste_type']." </td>
+               <td>   <a href='".$result['location']."' target='_blank'><p style='color:green;font-weight: bold;'>Open Location</p></a> </td>
+               <td>   ".$result['description']."  </td>
                <td>   ".$result['status']."  </td>
-               <td><a href = 'admindelete.php?i=$result[Id] 'class='btn btn-danger'>Delete</a></td>
-              <td> <a href = 'status.php?i=$result[Id]&s=$result[status] 'class='btn btn-success'>Status</a></td>
-
+               <td>   ".$result['priority']." </td>    
+               <td><a href = 'delete.php?i=$result[id] 'class='btn btn-danger' data-target='#exampleModalCenter' >Delete</a></td>
+              <td> <a href = 'status.php?i=$result[id]&s=$result[status] 'class='btn btn-success'>Status</a></td>
            </tr> ";
       
       }
@@ -298,6 +285,7 @@ if($email != false && $password != false){
 
    }
 ?>   
+
 </table>
       
                 </div>
@@ -308,25 +296,16 @@ if($email != false && $password != false){
     </div>
     <!-- /#page-wrapper -->
 </div><!-- /#wrapper -->
-<script>
-// $(function(){
-//     $('[data-toggle="tooltip"]').tooltip();
-//     $(".side-nav .collapse").on("hide.bs.collapse", function() {                   
-//         $(this).prev().find(".fa").eq(1).removeClass("fa-angle-right").addClass("fa-angle-down");
-//     });
-//     $('.side-nav .collapse').on("show.bs.collapse", function() {                        
-//         $(this).prev().find(".fa").eq(1).removeClass("fa-angle-down").addClass("fa-angle-right");        
-//     });
-// })  
+<script> 
 
-// var delId;
-// function modalLauch(id){
-//     delId=id;
-//     $('#toDeleteId').val(id);
-// }
-// function confirmDelete(){
-//     window.location.replace("http://localhost/EmailVerification/adminsignup/admindelete.php?i="+delId);
-// }
+var delId;
+function modalLauch(id){
+    delId=id;
+    $('#toDeleteId').val(id);
+}
+function confirmDelete(){
+    window.location.replace("delete.php?i="+delId);
+}
 </script>
 </body>
 </html>

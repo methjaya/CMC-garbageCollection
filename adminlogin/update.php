@@ -1,71 +1,49 @@
 <?php
-include_once('connection.php');
+include('../connection2.php');
 
-// error_reporting(0);
-$id=$_GET['i'];
-$n = $_GET['n'];
-$mbl = $_GET['mbl'];
-$em = $_GET['em'];
-$wt = $_GET['wt'];
-$lo = $_GET['lo'];
-$lod = $_GET['lod'];
-$f = $_GET['f'];
-$d = $_GET['d'];
-
-if(isset($_POST['update'])){
-  $id= $_POST['id'];
-   $name = $_POST['name'];
-    $mobile = $_POST['mobile'];
-    $email = $_POST['email'];
-    $checkbox1=$_POST['wastetype'];  
-    $chk="";  
-      foreach($checkbox1 as $chk1)  
+if(isset($_POST['update'])){ 
+	$id = $_POST['id'];
+    $location = mysqli_real_escape_string($con,$_POST['location']);
+    $wastetypes=$_POST['wastetype'];  
+    $wastetype="";  
+      foreach($wastetypes as $waste)  
              {  
-                 $chk .= $chk1.",";  
-             } 
-
-    $email =$_POST['email'];
-    $location = $_POST['location'];    
-    $locationdescription = $_POST['locationdescription'];
-    $date =$_POST['date'];
-	// @unlink('upload/'.$f[0]['file']) ;
-
+                 $wastetype .= $waste.",";  
+             }  
+    $impactdescription = mysqli_real_escape_string($con,$_POST['impactdescription']);
+	
 	$file = $_FILES['file']['name'];
-	$target_dir = "upload/";
-	$target_file = $target_dir . basename($_FILES["file"]["name"]);
+	$upload_dir = "../images/";
+	$upload_file = $upload_dir . basename($_FILES["file"]["name"]);
   
 	// Select file type
-	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+	$imageFileType = strtolower(pathinfo($upload_file,PATHINFO_EXTENSION));
   
 	// Valid file extensions
-	$extensions_arr = array("jpg","jpeg","png","gif","tif", "tiff");
-  
-	//validate file size 
-  //   $filesize = $_FILES["file"]["size"] < 5 * 1024 ;
-  
+	$img_extensions = array("jpg","jpeg","png","gif");
+
 	// Check extension
-	if( in_array($imageFileType,$extensions_arr) ){
+	if( in_array($imageFileType,$img_extensions) ){
    
 	
 	   // Upload file
-	   move_uploaded_file($image = $_FILES['file']['tmp_name'],$target_dir.$file);
+	   move_uploaded_file($_FILES['file']['tmp_name'],$upload_dir.$file);
   
 	}
-    $query = "update garbageinfo set name='$name',mobile='$mobile',email='$email',wastetype='$chk',location='$location',locationdescription='$locationdescription',file= '$file',date='$date' WHERE Id='$id'" ;
-   
-    $data = mysqli_query($db,$query);
-    
-    
-    if($data) {
+	$user_email = $_SESSION['email'];
 
-        echo " <span style='color:red'>Record Updated!</span>";   
-        
-       header("Location: http://localhost/EmailVerification/adminlogin/welcome.php", TRUE, 301);
-       exit();
+    $query = "UPDATE waste_detection SET waste_type='$wastetype',location='$location',description='$impactdescription',image='$file' WHERE id='$id'" ;
+   
+    $result = mysqli_query($con,$query);
+    
+    
+    if($result) {
+     
+       header("Location: ./welcome.php");
   
     }
     else {
-        echo "Failed to Update!";
+        echo "<center><h2>Failed to Update!</h2></center>";
     }
 
 
@@ -79,16 +57,15 @@ if(isset($_POST['update'])){
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet"type="text/css"href="styleupdate.css">
-    <title>Edit || Update</title>
+    <title>Update</title>
   
 </head>
 <body>
   
    <?php 
-   $error ='';   
-   echo $error; 
    ?>
    <form method="post" action="update.php"enctype="multipart/form-data">
+   <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
    <div class="container contact">
 	<div class="row">
 		<div class="col-md-3">
@@ -101,61 +78,48 @@ if(isset($_POST['update'])){
 		<div class="col-md-9">
 			<div class="contact-form">
 				<div class="form-group">
-				  <label class="control-label col-sm-2" for="fname"> Name:</label>
-				  <div class="col-sm-10">          
-					<input type="text" class="form-control" id="name" placeholder="Enter Your Name" name="name" required value="<?php echo "$n"?>" required>
-				  </div>
+				<div id="error"></div>
+				</div>
+			
+				<div class="form-group">
+				  <!-- <label class="control-label col-sm-2" for="email">Email:</label>
+				  <div class="col-sm-10"> -->
+
+				  <!-- </div> -->
 				</div>
 				<div class="form-group">
-				  <label class="control-label col-sm-2" for="lname">Mobile:</label>
-				  <div class="col-sm-10">  
-                    <input  value="<?php echo $id ?>" name ="id"  style="display:none">        
-					<input type="number" class="form-control" id="mobile" placeholder="Enter Your Mobile Number" name="mobile" required value="<?php echo "$mbl"?>">
-				  </div>
-				</div>
-				<div class="form-group">
-				  <div class="col-sm-10">
-					<input type="hidden" class="form-control" id="email" placeholder="Enter Your email" name="email" value="<?php echo "$em"?>">
-				  </div>
-				</div>
-				<div class="form-group">
-					<label class="control-label col-sm-2" for="option">Category:</label>
+					<label class="control-label col-sm-2" for="option">Waste Type:</label>
 					<div class="col-sm-10">          
-					    <input type="checkbox" name="wastetype[]" value="organic">Organic
-                        <input type="checkbox" name="wastetype[]" value="inorganic">Inorganic
-                        <input type="checkbox" name="wastetype[]" value="Household">Metallic
-                        <input type="checkbox" name="wastetype[]" value="mixed"checked>All
+					    <input type="checkbox" name="wastetype[]" value="Organic"> Organic
+                        <input type="checkbox" name="wastetype[]" value="Inorganic"> Inorganic
+                        <input type="checkbox" name="wastetype[]" value="Toxic/Hazardous"> Toxic/Hazardous
+                        <input type="checkbox" name="wastetype[]" value="mixed" checked> Mixed
 					</div>
 				  </div>
 				  <div class="form-group">
-					<label class="control-label col-sm-2" for="lname">Location:</label>
-					<div class="col-sm-10">          
-					   <select class="form-control" id="location" name="location" value="<?php echo "$lo"?>">
-						   <option class="form-control" >Ktm</option>
-						   <option class="form-control" >Bktpur</option>
-						   <option class="form-control" >lalitpur</option>
-						   <option class="form-control" >sanepa</option>
-						   <option class="form-control" >Kalanki</option>
-					   </select>
-					</div>
+				  <label class="control-label col-sm-2" for="location">Location:</label>
+				  
+				  <div class="col-sm-10">  	
+				  <a href="https://www.google.com/maps" target="_blank"><p style="color:green;">Open Google Maps from here.</p></a>
+					<input type="text" class="form-control" id="location" placeholder="Enter waste location from google maps"  name="location" required>					
+				  </div>
 				  </div>
 				<div class="form-group">
-				  
+				<label class="control-label col-sm-10" for="option">Details :</label>
 				  <div class="col-sm-10">
-					<input type="comment" class="form-control" rows="5" id="locationdescription" placeholder="Enter Location details..." name="locationdescription" value="<?php echo "$lod"?>" required>
+				  
+					<textarea class="form-control" rows="5" id="impactdescription" placeholder="Explain the impact"  name="impactdescription" required></textarea>
 				  </div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="lname">Pictures:</label>
+					<label class="control-label col-sm-2" for="file">Image:</label>
 					<div class="col-sm-10">          
-					  <input type="file" class="form-control" id="file" name="file" value="<?php echo "$f"?>"required accept="image/*" capture="camera">
+					  <input type="file" class="form-control" id="file" name="file" required accept="image/*" capture="camera">
 					</div>
 				  </div>
 				<div class="form-group">        
 				  <div class="col-sm-offset-2 col-sm-10">
-				    <input type="hidden" class="form-control" id="date" name="date" value="<?php $timezone = date_default_timezone_set("Asia/Kathmandu");
-                                                                                             echo  date("g:ia ,\n l jS F Y");?>">
-					<button type="submit" class="btn btn-default" name="update" id="update"  onclick ="CheckBoxCheck()">Update</button>
+					<button type="submit" class="btn btn-default" name="update" id="update">Update</button>
 				  </div>
 				</div>
 			</div>

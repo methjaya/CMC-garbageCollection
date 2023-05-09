@@ -61,28 +61,6 @@ if(isset($_POST['submit'])){
 	
 
 
-    //  $html = "<table><tr><td>FirstName: $name</td></tr><tr><td>Mobile: $mobile</td></tr><tr><td>Email: $email</td></tr><tr><td>Type Of Waste: $chk</td></tr><tr><td>Area: $location</td></tr><tr><td>Area description: $locationdescription</td></tr><tr><td>Images: $file  </td></tr><tr><td>Date: $date</td></tr></table>";
-    //  include('PHPMailerAutoload.php');
-    //  require_once('PHPMailerAutoload.php');
-    //  $mail = new PHPMailer(true);
-    //  $mail->isSMTP();
-    //  $mail->SMTPAuth = true;
-    //  $mail->SMTPSecure='tls';
-    //  $mail->Host='smtp.gmail.com';
-    //  $mail->Port= '587';
-    //  $mail->isHTML(true);
-    //  $mail->Username='janak.bista@sagarmatha.edu.np';
-    //  $mail->Password='your email passsword';
-    //  $mail->SetFrom('no-reply@howcode.org');     
-    //  $mail->Subject='Hello sir!';
-    //  $mail->Body=$html;     
-    //  $mail->AddAddress('francis@howcode.org');
-    //  $mail->SMTPOptions=array('ssl'=>array(
-    //      'verify_peer'=>false,
-    //      'verify_peer_name'=>false,
-    //      'allow_self_signed'=>false
-    //  ));
-    //  $mail->send();
 
  }
 ?>

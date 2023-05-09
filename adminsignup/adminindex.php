@@ -226,7 +226,7 @@ if ($email != false && $password != false) {
 
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-paper-plane-o"></i>Add Article</a>
+                        <a href="./addarticle.php"><i class="fa fa-fw fa-paper-plane-o"></i>Add Article</a>
                     </li>
                     <li>
                         <a href="logout-user.php"><i class="fa fa-fw fa fa-question-circle"></i> Logout</a>

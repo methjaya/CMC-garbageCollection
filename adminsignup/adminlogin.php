@@ -33,7 +33,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 offset-md-4 form login-form">
-                    <form action="userInteractions.php" method="POST" autocomplete="">
+                    <form action="adminlogin.php" method="POST" autocomplete="">
                         <h2 class="text-center" style="color:black;"> Admin Login </h2>
                         <p class="text-center" style="color:black;"><b>Login with your email and password.</b></p>
                         <?php

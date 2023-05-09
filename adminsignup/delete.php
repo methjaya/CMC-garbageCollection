@@ -2,7 +2,7 @@
 include('../connection2.php');
 
    $id = $_GET['i'];
-    $query = "DELETE  FROM waste_detection WHERE Id = '$id'" ;
+    $query = "DELETE  FROM waste_detection WHERE id = '$id'" ;
 
     $data = mysqli_query($con,$query);
     

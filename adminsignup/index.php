@@ -218,9 +218,6 @@ if($email != false && $password != false){
                    
                 </li>
                 <li>
-                    <a href="forgot-password.php"><i class="fa fa-fw fa-paper-plane-o"></i> Change password</a>
-                </li>
-                <li>
                     <a href="logout-user.php"><i class="fa fa-fw fa fa-question-circle"></i> Logout</a>
                 </li>
             </ul>

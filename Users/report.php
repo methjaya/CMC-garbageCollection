@@ -27,12 +27,18 @@ if(isset($_POST['submit'])){
 	
 	date_default_timezone_set("Asia/Colombo");               
     $location = mysqli_real_escape_string($con,$_POST['location']);
-    $wastetypes=$_POST['wastetype'];  
-    $wastetype="";  
-      foreach($wastetypes as $waste)  
-             {  
-                 $wastetype .= $waste.",";  
-             }  
+	if(isset($_POST['wastetype'])){
+		$wastetypes=$_POST['wastetype'];  
+		$wastetype="";  
+		  foreach($wastetypes as $waste)  
+				 {  
+					 $wastetype .= $waste.",";  
+				 }  
+	}
+	else{
+		$wastetype="mixed";
+	}
+
     $impactdescription = mysqli_real_escape_string($con,$_POST['impactdescription']);
 	$date = date("g:ia ,\n l jS F Y");
 	
@@ -127,7 +133,7 @@ if(isset($_POST['submit'])){
    <?php 
 
    ?>
-   <form method="post" action="trash.php" enctype="multipart/form-data">
+   <form method="post" action="report.php" enctype="multipart/form-data">
    <div class="container">
 	<div class="row">
 		<div class="col-md-3" style="background-color:#58D68D;">

@@ -72,7 +72,7 @@ if (isset($_POST['update'])) {
 					<div class="form-group">
 						<div class="col-sm-offset-2 col-sm-10">
 
-							<button type="submit" name="update" id="update" class='btn btn-success'>Update Status</button>
+							<button type="submit" name="update" id="update" class='btn btn-success' onclick="if(!this.form.checkbox.checked){alert('You must agree to the terms first.');return false}">Update Status</button>
 						</div>
 					</div>
 				</div>

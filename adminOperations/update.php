@@ -129,7 +129,8 @@ if(isset($_POST['update'])){
 				  
 				  <div class="col-sm-10">  	
 				  <a href="https://www.google.com/maps" target="_blank"><p style="color:green;">Open Google Maps from here.</p></a>
-					<input type="text" class="form-control" id="location" placeholder="Enter waste location from google maps"  name="location" required>					
+					<input type="text" class="form-control" id="location" placeholder="Enter waste location URL from google maps"  name="location" required>
+					<p>Example : https://goo.gl/maps/bxz2kXhg5pKwMf5J6</p>					
 				  </div>
 				  </div>
 				<div class="form-group">

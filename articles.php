@@ -32,9 +32,7 @@
    <!-- body -->
    <body class="main-layout">
       <!-- loader  -->
-      <div class="loader_bg">
-         <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-      </div>
+
       <!-- end loader -->
       <!-- header -->
       <header>
@@ -121,10 +119,7 @@
                         <div class="row">
                            <div class="col-md-12 col-lg-7">
                               <div class="text-bg">
-                                 <h1 style="color: darkgreen;">Green Cover Magazine by CMC</h1>
-
-                                 
-                                
+                                 <h1 style="color: darkgreen;">Green Cover Magazine by CMC</h1>                           
                               </div>
                            </div>
                            <div class="col-md-12 col-lg-5">
@@ -144,81 +139,51 @@
 </header>
 <!-- end banner -->       
 
-      <!-- article 1st eka -->
-      <section class="banner_main">
-         <div id="banner1" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-               <li data-target="#banner1" data-slide-to="0" class="active"></li>
-               <li data-target="#banner1" data-slide-to="1"></li>
-               <li data-target="#banner1" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="container-fluid">
-                     <div class="carousel-caption">
-                        <div class="row">
-                           <div class="col-md-12 col-lg-7">
-                              <div class="text-bg">
-                                 <h1 style="color: darkgreen;">Greenary '23</h1>
-
-                                 <p>Urban greenery refers to the presence of trees, plants, and other green spaces in cities and towns. Studies have shown that urban greenery provides a range of benefits to both people and the environment. Trees and plants can help to absorb pollutants and reduce the heat island effect, making urban areas more livable and sustainable. Additionally, green spaces can improve mental health by providing a calming environment and encouraging physical activity. Urban greenery can also contribute to local biodiversity by providing habitats for birds, insects, and other wildlife. By prioritizing and investing in urban greenery, cities and towns can promote healthier, more livable communities and contribute to a more sustainable future for all. </p>
-                                 <p>Sustainable Management with Tech Giants </p>
-                        
-                              </div>
-                           </div>
-                           <div class="col-md-12 col-lg-5">
-                              
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               
-               
-            </a>
-         </div>
-      </section>
-   </div>
-</div>
-</header>
-   <!-- article 1st eka end -->  
-
-         <!-- article 2nd eka -->
-         <section class="banner_main">
-            <div id="banner1" class="carousel slide" data-ride="carousel">
-               <ol class="carousel-indicators">
-                  <li data-target="#banner1" data-slide-to="0" class="active"></li>
-                  <li data-target="#banner1" data-slide-to="1"></li>
-                  <li data-target="#banner1" data-slide-to="2"></li>
-               </ol>
-               <div class="carousel-inner">
-                  <div class="carousel-item active">
-                     <div class="container-fluid">
-                        <div class="carousel-caption">
-                           <div class="row">
-                              
-                                 <div class="text-bg">
-                                    <h1 style="color: darkgreen;">The Eco Garden</h1>
+      <?php
+     
+      include("./connection2.php");
+      // require_once "../controllerUserData2.php";
    
-                                    <p> -   Gathering of leaders and experts from various fields who come together to discuss ways to address environmental issues and promote sustainability. These summits often focus on developing policies, technologies, and initiatives that can reduce carbon emissions, protect biodiversity, and mitigate the impacts of climate change.  </p>
-                                   
-                                    <p> -  A green summit is a gathering of leaders and experts from various fields who come together to discuss ways to address environmental issues and promote sustainability. These summits often focus on developing policies, technologies, and initiatives that can reduce carbon emissions, protect biodiversity, and mitigate the impacts of climate change. Participants may include government officials, scientists, environmental activists, business leaders, and representatives from non-profit organizations. Through collaboration and knowledge-sharing, a green summit aims to inspire positive change and drive action towards a more sustainable future for the planet.</p>
-                                 </div>
-                           
-                              
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+      $query = "SELECT * FROM article";
+      $data = mysqli_query($con,$query);
+      $total = mysqli_num_rows($data);
+        
+      if($total!=0) {
+   
+        
+         while($result=mysqli_fetch_assoc($data)){
+   
+        echo "
+        <section class='banner_main'>
+        <div id='banner1' class='carousel slide' data-ride='carousel'>
+           <ol class='carousel-indicators'>
+              <li data-target='#banner1' data-slide-to='0' class='active'></li>
+              <li data-target='#banner1' data-slide-to='1'></li>
+              <li data-target='#banner1' data-slide-to='2'></li>
+           </ol>
+           <div class='carousel-inner'>
+              <div class='carousel-item active'>
+                 <div class='container-fluid'>
+                    <div class='carousel-caption'>
+                       <div class='row'>                             
+                             <div class='text-bg'>
+                                <h1 style='color: darkgreen;'>$result[title]</h1>
+                                <p>$result[description]</p>
+                             </div>
+                       </div>
+                    </div>
+                 </div>
+              </div> 
+        </div>
+     </section>
                   
-                  
-               </a>
-            </div>
-         </section>
-      </div>
-   </div>
-   </header>
-      <!-- article 2nd eka end -->  
+                  ";
+         
+         }
+         
+   
+      }
+   ?> 
      
       <!--  footer -->
       <footer >

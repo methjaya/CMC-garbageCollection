@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2023 at 11:45 AM
+-- Generation Time: May 10, 2023 at 08:50 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -60,11 +60,8 @@ CREATE TABLE `article` (
 --
 
 INSERT INTO `article` (`id`, `title`, `description`) VALUES
-(1, 'test', 'add article 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'),
-(2, 'test', 'add article 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'),
-(3, 'test', 'add article 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'),
-(4, 'test', 'add article 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111'),
-(5, 'test', 'add article 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111');
+(1, 'Greenary \'23', 'Urban greenery refers to the presence of trees, plants, and other green spaces in cities and towns. Studies have shown that urban greenery provides a range of benefits to both people and the environment. Trees and plants can help to absorb pollutants and reduce the heat island effect, making urban areas more livable and sustainable. Additionally, green spaces can improve mental health by providing a calming environment and encouraging physical activity. Urban greenery can also contribute to local biodiversity by providing habitats for birds, insects, and other wildlife. By prioritizing and investing in urban greenery, cities and towns can promote healthier, more livable communities and contribute to a more sustainable future for all.Sustainable Management with Tech Giants'),
+(2, 'The Eco Garden', ' -   Gathering of leaders and experts from various fields who come together to discuss ways to address environmental issues and promote sustainability. These summits often focus on developing policies, technologies, and initiatives that can reduce carbon emissions, protect biodiversity, and mitigate the impacts of climate change. A green summit is a gathering of leaders and experts from various fields who come together to discuss ways to address environmental issues and promote sustainability. These summits often focus on developing policies, technologies, and initiatives that can reduce carbon emissions, protect biodiversity, and mitigate the impacts of climate change. Participants may include government officials, scientists, environmental activists, business leaders, and representatives from non-profit organizations. Through collaboration and knowledge-sharing, a green summit aims to inspire positive change and drive action towards a more sustainable future for the planet. ');
 
 -- --------------------------------------------------------
 
@@ -112,40 +109,9 @@ CREATE TABLE `waste_detection` (
 --
 
 INSERT INTO `waste_detection` (`id`, `waste_type`, `location`, `description`, `image`, `date_time`, `status`, `user_email`, `priority`) VALUES
-(5, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '1:19am ,\n Tuesday 9th May 2023', 'Completed', 'testuser@test.test', 'LOW'),
-(6, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '1:23am ,\n Tuesday 9th May 2023', 'Completed', 'testuser@test.test', 'LOW'),
-(7, 'organic,inorganic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '1:24am ,\n Tuesday 9th May 2023', 'Approved', 'testuser@test.test', 'HIGH'),
-(9, 'inorganic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'tes', 'the-dark-knight-rises-batman-poster.jpg', '1:28am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(10, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '1:28am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(11, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '1:30am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(12, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '1:30am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(13, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '1:37am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(14, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '1:37am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(15, 'inorganic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:18am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(16, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:19am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(17, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:20am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(18, 'inorganic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:20am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(19, 'inorganic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:23am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(20, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:23am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(21, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:25am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(22, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:25am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(23, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:27am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(25, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:28am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(26, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:28am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(27, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:28am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(28, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:28am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(29, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:28am ,\n Tuesday 9th May 2023', 'Approved', 'testuser@test.test', 'MEDIUM'),
-(30, 'organic,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'note-19-1-figure-02-en.jpg', '8:28am ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(45, 'Organic,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'central park', 'download.jpg', '3:42pm ,\n Tuesday 9th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(46, 'Toxic/Hazardous,mixed,', 'https://goo.gl/maps/CyPaoXtHknCiEi3F9', 'test', 'download.jpg', '5:54pm ,\n Tuesday 9th May 2023', 'Approved', 'testuser@test.test', 'HIGH'),
-(47, 'mixed,', 'test', 'test', 'download.jpg', '2:54pm ,\n Wednesday 10th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(48, '', 'test', 'test', 'download.jpg', '2:59pm ,\n Wednesday 10th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(49, 'mixed,', 'test', 'test', 'download.jpg', '3:00pm ,\n Wednesday 10th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(50, 'mixed,', 'test', 'test', 'download.jpg', '3:07pm ,\n Wednesday 10th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(51, 'mixed,', 'test', 'test', 'download.jpg', '3:07pm ,\n Wednesday 10th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(52, 'mixed', 'test', 'test2', 'download.jpg', '3:08pm ,\n Wednesday 10th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(53, 'Organic,Toxic/Hazardous,mixed,', 'test', 'test5', 'download.jpg', '3:08pm ,\n Wednesday 10th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
-(54, 'Inorganic,Toxic/Hazardous,', 'test', 'test8', 'download.jpg', '3:09pm ,\n Wednesday 10th May 2023', 'Pending', 'testuser@test.test', 'LOW');
+(53, 'inorganic', 'https://goo.gl/maps/oNGJJxbm7zf48ZjHA', 'polythene waste', 'plastic-trash-hero-compass-winter-2019.jpg', '3:08pm ,\n Wednesday 10th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
+(54, 'Inorganic,Toxic/Hazardous,', 'https://goo.gl/maps/M3SpwmqXP96YX7Bd7', 'plastic bottles', '160708145809-gettyimages-52264478.jpg', '3:09pm ,\n Wednesday 10th May 2023', 'Pending', 'testuser@test.test', 'LOW'),
+(55, 'Toxic/Hazardous,', 'https://goo.gl/maps/Ge6TSfNYJh4UPTuZ6', 'There is a bag full of paint cans dumped in this location. It\'s covered with chemicals and it has a toxic chemical smell. This is impacting health of humans and animals around this location.', 'download (1).jpg', '5:25pm ,\n Wednesday 10th May 2023', 'Approved', 'testuser@test.test', 'HIGH');
 
 --
 -- Indexes for dumped tables
@@ -189,7 +155,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -201,7 +167,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `waste_detection`
 --
 ALTER TABLE `waste_detection`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

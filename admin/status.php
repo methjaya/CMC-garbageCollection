@@ -34,16 +34,15 @@ if (isset($_POST['update'])) {
 	<link rel="stylesheet" type="text/css" href="styleupdate.css">
 </head>
 
-<body>
+<body style="background-color: #1D8348;">
 
 	<form method="post" action="status.php" enctype="multipart/form-data">
 		<div class="container contact">
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-3" style="background-color: #ABEBC6;">
 					<div class="contact-info">
-						<img src="images.jfif" alt="image" />
+						<img src="../images/done.png" alt="image" />
 						<h2>Edit Status</h2>
-						<h4>Inform Users their requested compalin is Handle!</h4>
 					</div>
 				</div>
 				<div class="col-md-9">

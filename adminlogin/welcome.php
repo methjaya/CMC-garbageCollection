@@ -20,7 +20,9 @@ if($email != false && $password != false){
       <title>Welcome </title>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-    body {
+
+body {
+  background-color: #D5F5E3;
   margin: 0;
   font-family: "Lato", sans-serif;
 }
@@ -29,7 +31,7 @@ if($email != false && $password != false){
   margin: 0;
   padding: 0;
   width: 150px;
-  background-color: #37517e;
+  background-color: #239B56;
   position: fixed;
   height: 100%;
   overflow: auto;
@@ -48,11 +50,6 @@ if($email != false && $password != false){
   
 
 }
-/* div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
-} */
 .logo1{
     border-radius :50%;
 }
@@ -74,36 +71,35 @@ if($email != false && $password != false){
   }
 }
 #ch {
-  position: fixed;
+  background-color: #66CC66;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
  text-align: center;
  overflow: hidden;
+ font-size: x-large;
+
 }
     </style>
       <!-- cdn for awesome fonts icons -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-       <!-- End -->
+
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
    </head>
    
-   <body> 
+   <body style="background-color:#EAFAF1;"> 
    <div class="sidebar">
-  <a href="http://localhost/EmailVerification/index.html"  class="fa fa-home"><strong> Home - <img src="Capture.PNG" alt="LOGO"heigth='30'width='30'class='logo1'>
+   <a href="../index.html"  style="font-size:large;"><strong> <i class="fa fa-home" ></i> Home
  </strong></a>
-  <!-- <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a> -->
+
 </div><br>
       
-   <!-- <nav class="fixed-top">
-    <a class="navbar-brand" href="http://localhost/EmailVerification/index.html">Home</a>
-    </nav>
-    <br> -->
-    <div class="container"id="ch"> <b><mark> YOUR Request HISTORY </mark></b></div>
+    <div class="container" id="ch" > <center><b> Your Requests</b></center></div>
       <div class="container">     
-      <table  cellspacing:="10" class='table' >
+      <table  cellspacing:="10" class='table' style="background-color: #73C6B6;">
              <br><br>
              <tr>
                  <th>Date</th>
@@ -117,7 +113,6 @@ if($email != false && $password != false){
                  <tr><br>
 
    <?php
-   // error_reporting(0);
   
    include("../connection2.php");
    require_once "../controllerUserData2.php";

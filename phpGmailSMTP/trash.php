@@ -84,28 +84,57 @@ if(isset($_POST['submit'])){
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet"type="text/css"href="style.css">
     <title>Request</title>
+<style>
+	.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: #0E6655;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+ 
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+.sidebar a:hover {
+  color:whitesmoke;
+  text-decoration: none;
+  
+
+}
+</style>
   
 </head>
-<body>
-	<div>
-        <a href="http://localhost/EmailVerification/index.html"  class="fa fa-home"> Home </a>
-    </div>
+<body style="background-color:#EAFAF1;">
+
+<div class="sidebar">
+  <a href="../index.html"  style="font-size:large;"><strong> <i class="fa fa-home" ></i> Home
+ </strong></a>
+</div><br>
+
    <?php 
-//    $error ='test';   
+
    ?>
    <form method="post" action="trash.php" enctype="multipart/form-data">
    <div class="container">
 	<div class="row">
 		<div class="col-md-3">
 			<div class="contact-info">
-				<img src="images.jfif" alt="image"/>
+				<img src="recycling.png" alt="image"/>
 				<h2>Add Your Request</h2>
-				<h4>We would love to hear from you !</h4>
+				
 			</div>
 		</div>
 		<div class="col-md-9">

@@ -1,12 +1,12 @@
 <?php 
 session_start();
-// require "connection.php";
+
 require "connection2.php";
 $email = "";
 $name = "";
 $errors = array();
 
-//if user signup button
+//user(GTF) sign up
 if(isset($_POST['signup'])){
     $name = mysqli_real_escape_string($con, $_POST['name']);
     $email = mysqli_real_escape_string($con, $_POST['email']);
@@ -36,7 +36,7 @@ if(isset($_POST['signup'])){
 }
     
 
-    //if user click login button
+    //USER LOGIN
     if(isset($_POST['login'])){
         $email = mysqli_real_escape_string($con, $_POST['email']);
         $password = mysqli_real_escape_string($con, $_POST['password']);
@@ -57,13 +57,8 @@ if(isset($_POST['signup'])){
                 $errors['email'] = "Incorrect Credentials!";
             }
         }else{
-            $errors['email'] = "You are not a member yet click in the below lin k to register";
+            $errors['email'] = "You are not a member yet click the below link to register";
         }
     }
 
-    
-   //if login now button click
-    if(isset($_POST['login-now'])){
-        header('Location: login-user.php');
-    }
 ?>

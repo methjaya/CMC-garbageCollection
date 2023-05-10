@@ -1,5 +1,4 @@
-body {
-  font-family: 'Roboto Mono', monospace;}
+body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -9,12 +8,6 @@ input[type=text], input[type=password] {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
-}
-table{
-  border: #000;
-}
-td{
-  color: #000;
 }
 
 /* Set a style for all buttons */

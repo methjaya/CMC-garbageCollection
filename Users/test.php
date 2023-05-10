@@ -52,7 +52,7 @@ if(isset($_POST['submit'])){
     	if(mysqli_query($con,$sql)){
 			echo "<h2>Succuss!</h2>";
 			echo "<script>console.log('Succuss');</script>";
-			$msg = '<div class = "alert alert-success"><span class="fa fa-check"> "Compain Registered Successfully!"</span><a href="http://localhost/EmailVerification/adminlogin/welcome.php"> view Complain </a></div>';		
+			$msg = '<div class = "alert alert-success"><span class="fa fa-check"> "Compain Registered Successfully!"</span></div>';		
 		}else {
 			echo "<script>console.log('Failed');</script>";
 			echo "<h2>Failed!</h2>";

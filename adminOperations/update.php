@@ -58,9 +58,38 @@ if(isset($_POST['update'])){
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet"type="text/css"href="styleupdate.css">
     <title>Update</title>
+	<style>
+	.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 150px;
+  background-color: #0E6655;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+ 
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+}
+.sidebar a:hover {
+  color:whitesmoke;
+  text-decoration: none;
+  
+
+}
+</style>
   
 </head>
-<body>
+<body style="background-color:#EAFAF1;">
+<div class="sidebar">
+  <a href="../index.html"  style="font-size:large;"><strong> <i class="fa fa-home" ></i> Home
+ </strong></a>
+</div><br>
   
    <?php 
    ?>
@@ -68,11 +97,10 @@ if(isset($_POST['update'])){
    <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
    <div class="container contact">
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-md-3" style="background-color:#58D68D;">
 			<div class="contact-info">
-				<img src="images.jfif" alt="image"/>
-				<h2>Edit Complain</h2>
-				<h4>Please provide valid Information !</h4>
+				<img src="../images/recycling.png" alt="image"/>
+				<h2>Edit Request</h2>
 			</div>
 		</div>
 		<div class="col-md-9">
@@ -119,7 +147,7 @@ if(isset($_POST['update'])){
 				  </div>
 				<div class="form-group">        
 				  <div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default" name="update" id="update">Update</button>
+					<button type="submit" class="btn btn-default" name="update" id="update" style="background-color: #0B5345;">Update</button>
 				  </div>
 				</div>
 			</div>

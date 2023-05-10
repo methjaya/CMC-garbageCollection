@@ -130,9 +130,9 @@ if(isset($_POST['submit'])){
    <form method="post" action="trash.php" enctype="multipart/form-data">
    <div class="container">
 	<div class="row">
-		<div class="col-md-3">
-			<div class="contact-info">
-				<img src="recycling.png" alt="image"/>
+		<div class="col-md-3" style="background-color:#58D68D;">
+			<div class="contact-info" >
+				<img src="../images/recycling.png" alt="image"/>
 				<h2>Add Your Request</h2>
 				
 			</div>
@@ -182,7 +182,7 @@ if(isset($_POST['submit'])){
 				  </div>
 				<div class="form-group">        
 				  <div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default" name="submit" >Register</button>
+					<button type="submit" class="btn btn-default" name="submit" style="background-color: #0B5345;">Submit</button>
 				  </div>
 				</div>
 			</div>

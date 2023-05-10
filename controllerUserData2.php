@@ -26,6 +26,9 @@ if(isset($_POST['signup'])){
                         values('$name', '$email', '$encedpass')";
         $data_check = mysqli_query($con, $sql_ins);
         if($data_check){
+            $_SESSION['email'] = $email;
+            $_SESSION['password'] = $password;
+            $_SESSION['role'] = $fetch_role;
             header('location: index.html');
             // exit();
         }else{

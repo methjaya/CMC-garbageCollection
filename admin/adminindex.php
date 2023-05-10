@@ -18,7 +18,7 @@ if ($email != false && $password != false) {
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
@@ -107,7 +107,7 @@ if ($email != false && $password != false) {
                 border-radius: 0;
                 border-top: 1px rgba(0, 0, 0, .5) solid;
                 overflow-y: auto;
-                background-color: #37517e;
+                background-color: #1D8348;
                 /*background-color: #5A6B7D;*/
                 bottom: 0;
                 overflow-x: hidden;
@@ -190,15 +190,15 @@ if ($email != false && $password != false) {
     </style>
 </head>
 
-<body>
+<body style="background-color:#EAFAF1;">
     <!-- Favicons -->
-    <link href="adminsignup/Capture.PNG" rel="icon">
+    <link href="admin/Capture.PNG" rel="icon">
 
     <div id="throbber" style="display:none; min-height:120px;"></div>
     <div id="noty-holder"></div>
     <div id="wrapper">
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style='background-color:#37517e'>
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style='background-color:#1D8348'>
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -207,9 +207,9 @@ if ($email != false && $password != false) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://localhost/EmailVerification/index.html">
-                    <img src="Capture.PNG" alt="LOGO" heigth='50' width='50' class='logo1'>
-                </a>
+                <a class="navbar-brand" href="#">
+                <img src="../images/logo.png" alt="LOGO"heigth='50'width='50'class='logo1'>
+            </a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -226,10 +226,14 @@ if ($email != false && $password != false) {
 
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-fw fa-paper-plane-o"></i>Add Article</a>
+                        <a href="./addarticle.php"><i class="fa fa-fw fa-paper-plane-o"></i>Add Article</a>
                     </li>
                     <li>
                         <a href="logout-user.php"><i class="fa fa-fw fa fa-question-circle"></i> Logout</a>
+                    </li>
+                    <li>
+                        <a href="./collectionpoint.php"><i class="fa fa-map-marker" aria-hidden="true"></i>  Collection Points</a>
+                        
                     </li>
                 </ul>
             </div>
@@ -238,9 +242,9 @@ if ($email != false && $password != false) {
 
         <div id="page-wrapper">
             <div class="container-fluid">
-                <!-- Page Heading -->
-                <div class="row" id="main">
-                    <div class="col-sm-12 col-md-12 well" id="content">
+                <!-- Page Heading --> 
+                <div class="row" id="main" >
+                    <div class="col-sm-12 col-md-12 well" id="content" style="background-color:#82E0AA;">
                         <h1>Welcome Admin!</h1>
                         <!--table start  -->
 
@@ -335,8 +339,8 @@ if ($email != false && $password != false) {
                             <option class="form-control" value="cpt">Green Captain</option>
                             <option class="form-control" value="userc">Collector</option>
                         </select><br>
-                        <div class="form-group">
-                            <input class="form-control button" type="submit" name="signup" value="Signup">
+                        <div class="form-group" >
+                            <input class="form-control button" type="submit" name="signup" value="Signup" style="background-color: #0E6655;color:white;">
                         </div>
                     </form>
                 </div>

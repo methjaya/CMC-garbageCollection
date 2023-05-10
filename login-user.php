@@ -62,7 +62,7 @@
                             <div class="link login-link text-center" style="color:black;"><b>Not yet a member ? </b><a href="signup-user.php"><b>Signup now</b></a><br><br>
                                 <h6>Or <br> <br>
                                     <!-- <i class="fa fa-user" aria-hidden="true">Admin</i> -->
-                                    <a href="adminsignup/adminlogin.php"> <i class="text-center" style=font-family:Arial; font-size: 16px; aria-hidden="true"> <b>Login As Admin</b></i></a>
+                                    <a href="admin/adminlogin.php"> <i class="text-center" style=font-family:Arial; font-size: 16px; aria-hidden="true"> <b>Login As Admin</b></i></a>
                                     <!-- <i class="fa fa-users" aria-hidden="true"></i> -->
                                 </h6>
                             </div>

@@ -105,8 +105,7 @@ if($email != false && $password != false){
         border-radius: 0;
         border-top: 1px rgba(0,0,0,.5) solid;
         overflow-y: auto;
-        background-color: #37517e;
-        /*background-color: #5A6B7D;*/
+        background-color: #1D8348;
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
@@ -183,15 +182,15 @@ if($email != false && $password != false){
 }
 </style>
 </head>
-<body>
+<body style="background-color:#EAFAF1;">
       <!-- Favicons -->
-  <link href="adminsignup/Capture.PNG" rel="icon">
+  <link href="admin/Capture.PNG" rel="icon">
 
 <div id="throbber" style="display:none; min-height:120px;"></div>
 <div id="noty-holder"></div>
 <div id="wrapper">
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style='background-color:#37517e'>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style='background-color:#1D8348'>
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -200,8 +199,8 @@ if($email != false && $password != false){
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="http://localhost/EmailVerification/index.html">
-                <img src="Capture.PNG" alt="LOGO"heigth='50'width='50'class='logo1'>
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/logo.png" alt="LOGO"heigth='50'width='50'class='logo1'>
             </a>
         </div>
         <!-- Top Menu Items -->
@@ -214,11 +213,7 @@ if($email != false && $password != false){
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
                 <li>
-                    <a href="#Dashboard" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i><mark> Dashboard</mark> <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                   
-                </li>
-                <li>
-                    <a href="forgot-password.php"><i class="fa fa-fw fa-paper-plane-o"></i> Change password</a>
+                    <a href="../index.html" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i>Home<i class="fa fa-fw fa-angle-down pull-right"></i></a>              
                 </li>
                 <li>
                     <a href="logout-user.php"><i class="fa fa-fw fa fa-question-circle"></i> Logout</a>
@@ -235,7 +230,7 @@ if($email != false && $password != false){
                 <div class="col-sm-12 col-md-12 well" id="content">
                     <h1>Welcome Admin!</h1>
                       <!--table start  -->
-                      <table  cellspacing:="12" class='table'>
+                      <table  cellspacing:="12" class='table' style="background-color:#82E0AA;">
              <tr class="panel-heading">
                  <th> Id </th>
                  <th> Submitted User Email</th>
